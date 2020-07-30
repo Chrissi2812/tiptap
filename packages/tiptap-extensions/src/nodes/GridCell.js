@@ -57,7 +57,8 @@ export default class GridCell extends Node {
         },
       },
       template: `
-        <div class="grid_cell_wrapper" :class="classList">
+        <div class="grid_cell_wrapper" :class="classList" contenteditable="false">
+          <div data-drag-handle></div>
           <input v-for="key in Object.keys(cols)" class="grid_cell__input" @paste.stop @keydown.stop type="text" v-model.number="cols[key]" v-if="view.editable" />
           <div class="grid_cell" ref="content" :contenteditable="view.editable.toString()"></div>
         </div>
