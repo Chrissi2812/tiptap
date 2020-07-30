@@ -14,6 +14,7 @@ export { default as TableHeader } from './nodes/TableHeader'
 export { default as TableCell } from './nodes/TableCell'
 export { default as TableRow } from './nodes/TableRow'
 export { default as TodoItem } from './nodes/TodoItem'
+export { default as GridCell } from './nodes/GridCell'
 export { default as TodoList } from './nodes/TodoList'
 
 export { default as Bold } from './marks/Bold'

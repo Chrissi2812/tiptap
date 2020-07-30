@@ -2,7 +2,13 @@
   <div class="editor">
     <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
       <div class="menubar">
-
+        <button
+            class="menubar__button"
+            :class="{ 'is-active': isActive.grid_cell() }"
+            @click="commands.grid_cell"
+        >
+          GridCell
+        </button>
         <button
           class="menubar__button"
           :class="{ 'is-active': isActive.bold() }"
@@ -152,6 +158,7 @@ import {
   Bold,
   Code,
   Italic,
+  GridCell,
   Link,
   Strike,
   Underline,
@@ -169,6 +176,15 @@ export default {
       editor: new Editor({
         extensions: [
           new Blockquote(),
+          new GridCell({
+            columns: {
+              ultrawide: 3,
+              default: 4,
+              tablet: 5,
+              phone: 12,
+            },
+            prefix: 'column',
+          }),
           new BulletList(),
           new CodeBlock(),
           new HardBreak(),

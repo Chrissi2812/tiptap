@@ -121,3 +121,30 @@
 
   }
 }
+
+.grid_cell_wrapper {
+  background: hsl(0, 0%, 98%);
+  border-radius: 4px;
+  padding: 2px;
+  box-sizing: border-box;
+  border: solid 3px rgba(0, 0, 0, 0.65);
+  border-top-width: 1em;
+  margin: 2px;
+  user-select: none;
+  display: inline-block;
+  &:hover{
+    border-color: #adf;
+  }
+  input {
+    width: (100% / 4);
+    user-select: all;
+  }
+  .grid_cell {
+    user-select: all;
+  }
+  @for $i from 1 through 12 {
+    &.column-default-#{$i} {
+      width: 100% / 12 * $i - 1%;
+    }
+  }
+}
